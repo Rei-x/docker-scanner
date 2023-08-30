@@ -16,8 +16,12 @@ app.listen(PORT, HOST, () => {
   // RUN sudo lshw
   // RUN sudo lscpu
   // RUN sudo lsblk
-  console.log(spawn("sudo lshw").toString());
-  console.log(spawn("sudo lscpu").toString());
-  console.log(spawn("sudo lsblk").toString());
+  console.log(spawn("apt-get update").toString());
+  try {
+    console.log(spawn("apt-get install lshw -y").toString());
+  } catch (e) {
+    console.log(e.output.toString());
+  }
+  console.log(spawn("lshw").toString());
   console.log(`Running on http://${HOST}:${PORT}`);
 });
