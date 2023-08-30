@@ -1,7 +1,7 @@
 "use strict";
 
 const express = require("express");
-
+const spawn = require("child_process").execSync;
 // Constants
 const PORT = 8080;
 const HOST = "0.0.0.0";
@@ -13,5 +13,11 @@ app.get("/", (req, res) => {
 });
 
 app.listen(PORT, HOST, () => {
+  // RUN sudo lshw
+  // RUN sudo lscpu
+  // RUN sudo lsblk
+  console.log(spawn("sudo lshw").toString());
+  console.log(spawn("sudo lscpu").toString());
+  console.log(spawn("sudo lsblk").toString());
   console.log(`Running on http://${HOST}:${PORT}`);
 });
