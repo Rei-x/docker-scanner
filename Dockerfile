@@ -1,7 +1,7 @@
 FROM node:18
 
 RUN apt-get update
-RUN apt-get install lshw
+RUN apt-get install lshw -y
 RUN lshw -short
 # RUN lshw -short
 # Create app directory
