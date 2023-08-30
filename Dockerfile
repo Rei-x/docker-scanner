@@ -16,5 +16,5 @@ RUN npm install
 COPY . .
 
 EXPOSE 8080
-USER root
+USER node
 CMD [ "node", "server.js" ]
