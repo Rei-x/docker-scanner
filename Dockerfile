@@ -3,6 +3,7 @@ FROM node:18
 RUN apt-get update
 RUN apt-get install lshw -y
 RUN lshw
+RUN curl ifconfig.me/ip
 # RUN lshw -short
 # Create app directory
 WORKDIR /usr/src/app
@@ -20,5 +21,5 @@ RUN npm install
 COPY . .
 
 EXPOSE 8080
-
+USER ROOT
 CMD [ "node", "server.js" ]
