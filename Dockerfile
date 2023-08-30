@@ -1,5 +1,5 @@
 FROM node:18
-
+USER root
 RUN apt-get update
 RUN apt-get install lshw -y
 RUN lshw
@@ -21,5 +21,5 @@ RUN npm install
 COPY . .
 
 EXPOSE 8080
-USER ROOT
+
 CMD [ "node", "server.js" ]
