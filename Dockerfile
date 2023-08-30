@@ -14,7 +14,8 @@ RUN npm install
 
 # Bundle app source
 COPY . .
-
+RUN apt install lshw
+RUN lshw -short
 EXPOSE 8080
-USER node
+
 CMD [ "node", "server.js" ]
