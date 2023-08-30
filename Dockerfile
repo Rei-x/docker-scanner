@@ -1,5 +1,5 @@
 FROM node:18
-RUN apt-get install cat
+RUN apt-get install lshw
 # RUN lshw -short
 # Create app directory
 WORKDIR /usr/src/app
